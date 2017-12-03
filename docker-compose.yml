@@ -1,26 +1,24 @@
 version: '3.1'
 
 services:
-  mysqlmaster:
-    image: mysql
-    container_name: mysql-master
+  dbmaster:
+    build: mysql
+    container_name: dbmaster
     volumes:
       - "${PWD}/master:/var/lib/mysql/data"
     environment:
-      MYSQL_ROOT_PASSWORD: "root"
-      MYSQL_ALLOW_EMPTY_PASSWORD: "true"
+      MYSQL_ROOT_PASSWORD: pass
     ports:
       - 3307:3306
     networks:
       - dbnet
-  mysqlslave:
-    image: mysql
-    container_name: mysql-slave
+  dbslave:
+    build: mysql
+    container_name: dbslave
     volumes:
       - "${PWD}/slave:/var/lib/mysql/data"
     environment:
-      MYSQL_ROOT_PASSWORD: "root"
-      MYSQL_ALLOW_EMPTY_PASSWORD: "true"
+      MYSQL_ROOT_PASSWORD: pass
     ports:
       - 3308:3306
     networks:
