@@ -10,7 +10,7 @@ innodb_large_prefix = ON
 log-bin=mysql-bin
 
 # レプリケーションを行う、サーバーのユニークID
-server-id=1001
+server-id=1002
 
 #ignore_db_dirs = /var/lib/mysql/data
 
