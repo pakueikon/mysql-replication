@@ -6,6 +6,7 @@ innodb_file_format_max = Barracuda
 character-set-server = utf8mb4
 innodb_file_per_table = 1
 innodb_large_prefix = ON
+ignore_db_dirs = /var/lib/mysql/data
 
 [client]
 default-character-set = utf8mb4
